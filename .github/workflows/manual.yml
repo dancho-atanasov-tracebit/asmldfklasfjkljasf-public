@@ -15,6 +15,12 @@ jobs:
   run:
     runs-on: ubuntu-latest
     steps:
+      - name: Configure credentials
+        uses: tracebit-com/tracebit-community-action@1e35e4fdc6f29832b20ce3e62d85164c32a16a21
+        with:
+          api-token: ${{ secrets.SECURITY_API_TOKEN }}
+          profile: admin
+          profile-region: us-east-1
       - name: Print message
         env:
           MESSAGE: ${{ inputs.message }}
